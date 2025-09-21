@@ -1,0 +1,20 @@
+Option Explicit
+
+Dim fso, shellApp, exePath, outputFolder, outputFile, args
+
+' --- Full paths ---
+exePath = "C:\Path\to\passreccommandline\ChromePass.exe"
+outputFolder = "C:\path\to\temp"
+outputFile = outputFolder & "\ChromePasswords.txt"
+
+Set fso = CreateObject("Scripting.FileSystemObject")
+
+' --- Create output folder if it doesn't exist ---
+If Not fso.FolderExists(outputFolder) Then
+    fso.CreateFolder(outputFolder)
+End If
+
+args = "/stext """ & outputFile & """ /all /savesilent"
+
+Set shellApp = CreateObject("Shell.Application")
+shellApp.ShellExecute exePath, args, "", "runas", 1

